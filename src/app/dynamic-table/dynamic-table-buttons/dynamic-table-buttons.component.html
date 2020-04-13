@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let action of actions">
+        <a (click)="sendActionClick(action)" [matTooltip]="buttonsConfig[action.column].tooltip">
+            <!-- <i [ngClass]="buttonsConfig[action.column].icon"></i> -->
+            {{buttonsConfig[action.column].icon}}
+        </a>
+    </li> 
+ </ul>

@@ -1,0 +1,10 @@
+{
+  "name": "ngx-dynamic-table",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^9.1.1",
+    "@angular/core": "^9.1.1",
+    "tslib": "^1.10.0",
+    "@angular/material": "^9.2.0"
+  }
+}

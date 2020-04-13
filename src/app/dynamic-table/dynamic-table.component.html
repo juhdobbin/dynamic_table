@@ -1,0 +1,29 @@
+
+<mat-table #table [dataSource]="dados" [hidden]="loading || !displayedColumns || !displayedColumnsObject || dados">
+
+    <!-- Position Column -->
+    <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol.column}}">
+      <th mat-header-cell *matHeaderCellDef> {{disCol.title}} </th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="disCol.column !== 'acoes'; else blockActions">
+          {{element[disCol.column]}}
+        </span>
+        <ng-template #blockActions>
+          <app-dynamic-table-buttons [actions]="actions"
+            (buttonClicked)="sendAction($event, element, dados.filteredData.indexOf(element))">
+  
+          </app-dynamic-table-buttons>
+        </ng-template>
+      </td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsObject"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsObject;"></tr>
+  </mat-table>
+  <div *ngIf="!loading && dataSource.filteredData.length === 0">
+    Nenhum registro encontrado
+  </div>
+  
+  <!-- <mat-paginator [hidden]="dataSource === undefined" [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator> -->
+  
