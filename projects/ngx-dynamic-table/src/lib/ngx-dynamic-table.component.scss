@@ -1,0 +1,21 @@
+
+[hidden] {
+  display: none;
+}
+
+
+.actionsList{
+  list-style-type: none;
+  li{
+    display: inline;
+    &+li{
+      margin-left: 10px;
+    }
+  }
+}
+.mat-table{
+  width: 100%;
+  tr.mat-header-row{
+    height: auto;
+  }
+}

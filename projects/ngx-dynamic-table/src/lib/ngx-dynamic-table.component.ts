@@ -1,4 +1,11 @@
-import { Component, ViewChild, EventEmitter, Output, Input, OnChanges } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  EventEmitter,
+  Output,
+  Input,
+  OnChanges,
+} from '@angular/core';
 import { MatTableDataSource, MatTable } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -6,59 +13,30 @@ export const buttonsConfig = {
   read: {
     icon: 'search',
     name: 'read',
-    tooltip: 'Visualizar'
+    tooltip: 'Visualizar',
   },
   update: {
     icon: 'edit',
     name: 'edit',
-    tooltip: 'Editar'
+    tooltip: 'Editar',
   },
   delete: {
     icon: 'delete',
     name: 'delete',
-    tooltip: 'Excluir'
+    tooltip: 'Excluir',
   },
-  download:
-  {
+  download: {
     icon: 'arrow_downward',
     name: 'download',
-    tooltip: 'Download'
-  }
-}
+    tooltip: 'Download',
+  },
+};
 @Component({
   selector: 'lib-ngx-dynamic-table',
-  template: `
- 
-  <mat-table #table [dataSource]="dados" [hidden]="loading || !dados || !displayedColumns || !displayedColumnsObject">
-
-  <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol.column}}">
-    <th mat-header-cell *matHeaderCellDef> {{disCol.title}} </th>
-    <td mat-cell *matCellDef="let element">
-      <span *ngIf="disCol.column !== 'actions'; else blockActions">
-      {{element[disCol.column]}}
-      </span>
-      <ng-template #blockActions>
-        <ul>
-            <li *ngFor="let action of actions">
-                <a (click)="sendAction(action)" [matTooltip]="buttonsConfig[action.column].tooltip">
-                    <mat-icon aria-hidden="false">{{buttonsConfig[action.column].icon}}</mat-icon>
-                </a>
-            </li> 
-        </ul>
-      </ng-template>
-    </td>
-  </ng-container>
-
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumnsObject"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumnsObject;"></tr>
-</mat-table>
-
-
-  `,
-  styles: [
-    `[hidden]: display:none;`
-  ]
+  templateUrl: './ngx-dynamic-table.component.html',
+  styleUrls: [
+    './ngx-dynamic-table.component.scss'
+  ],
 })
 export class NgxDynamicTableComponent implements OnChanges {
   @Input() dataSource;
@@ -83,16 +61,14 @@ export class NgxDynamicTableComponent implements OnChanges {
   public displayedColumnsObject: any[] = [];
   public dados;
 
-  constructor() { }
+  constructor() {}
 
   ngOnChanges(): void {
     if (this.displayedColumns) {
       this.addActionColumn();
-
     }
     if (this.dataSource) {
       this.createDatasource();
-
     }
   }
 
@@ -100,13 +76,14 @@ export class NgxDynamicTableComponent implements OnChanges {
     this.dados = new MatTableDataSource<any>(this.dataSource);
     this.dados.paginator = this.paginator;
     this.dados.sort = this.sort;
-    this.showTable()
+    this.showTable();
   }
 
   createColumns() {
-    this.displayedColumnsObject = this.displayedColumns.map(col => typeof col.column === 'number' ? col.column.toString() : col.column);
-    this.showTable()
-
+    this.displayedColumnsObject = this.displayedColumns.map((col) =>
+      typeof col.column === 'number' ? col.column.toString() : col.column
+    );
+    this.showTable();
   }
 
   showTable() {
@@ -120,11 +97,9 @@ export class NgxDynamicTableComponent implements OnChanges {
   }
   addActionColumn() {
     if (this.actions) {
-      const columnAction = { column: 'actions', title: 'Ações' }
+      const columnAction = { column: 'actions', title: 'Ações' };
       this.displayedColumns = [...this.displayedColumns, columnAction];
     }
     this.createColumns();
-
   }
-
 }

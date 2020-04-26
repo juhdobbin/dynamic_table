@@ -1,0 +1,27 @@
+
+
+  <mat-table #table [dataSource]="dados" [hidden]="loading || !dados || !displayedColumns || !displayedColumnsObject">
+
+    <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol.column}}">
+      <th mat-header-cell *matHeaderCellDef> {{disCol.title}} </th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="disCol.column !== 'actions'; else blockActions">
+        {{element[disCol.column]}}
+        </span>
+        <ng-template #blockActions>
+          <ul class="actionsList">
+              <li *ngFor="let action of actions">
+                  <a (click)="sendAction(action)" matTooltip="{{buttonsConfig[action.column].tooltip}}">
+                    <i class="material-icons">{{buttonsConfig[action.column].icon}}</i>
+                  </a>
+              </li>
+          </ul>
+        </ng-template>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsObject"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsObject;"></tr>
+  </mat-table>
+  <mat-paginator [hidden]="dados === undefined" [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>

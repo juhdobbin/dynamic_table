@@ -34,10 +34,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -46,7 +48,8 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [{
+              "budgets": [
+                {
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
@@ -162,5 +165,8 @@
       }
     }
   },
-  "defaultProject": "dynamic-table"
+  "defaultProject": "dynamic-table",
+  "cli": {
+    "analytics": "4d5c8976-62b5-4e93-8e3b-a8e6581d9d8b"
+  }
 }

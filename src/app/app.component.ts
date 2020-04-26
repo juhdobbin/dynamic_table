@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamic-table';
-  public displayedColumns: any = [{ column: 'position', title: 'position' }, { column: 'name', title: 'name' }, { column: 'weight', title: 'weight' }];
+  public displayedColumns: any = [{ column: 'position', title: 'id' }, { column: 'name', title: 'name' }, { column: 'weight', title: 'weight' }];
   public dataSource = [
     { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
     { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
