@@ -7,10 +7,68 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamic-table';
-  public displayedColumns: any = [{ column: 'position', title: 'id' }, { column: 'name', title: 'name' }, { column: 'weight', title: 'weight' }];
+  public displayedColumns: any = [{ column: 'id', title: 'id' }, { column: 'name', title: 'name' }, { column: 'email', title: 'email' }];
   public dataSource = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+    {
+      'id': 1,
+      'name': 'Leanne Graham',
+      'username': 'Bret',
+      'email': 'Sincere@april.biz'
+    },
+    {
+      'id': 2,
+      'name': 'Ervin Howell',
+      'username': 'Antonette',
+      'email': 'Shanna@melissa.tv'
+    },
+    {
+      'id': 3,
+      'name': 'Clementine Bauch',
+      'username': 'Samantha',
+      'email': 'Nathan@yesenia.net'
+    },
+    {
+      'id': 4,
+      'name': 'Patricia Lebsack',
+      'username': 'Karianne',
+      'email': 'Julianne.OConner@kory.org'
+    },
+    {
+      'id': 5,
+      'name': 'Chelsey Dietrich',
+      'username': 'Kamren',
+      'email': 'Lucio_Hettinger@annie.ca'
+    },
+    {
+      'id': 6,
+      'name': 'Mrs. Dennis Schulist',
+      'username': 'Leopoldo_Corkery',
+      'email': 'Karley_Dach@jasper.info'
+    },
+    {
+      'id': 7,
+      'name': 'Kurtis Weissnat',
+      'username': 'Elwyn.Skiles',
+      'email': 'Telly.Hoeger@billy.biz'
+    },
+    {
+      'id': 8,
+      'name': 'Nicholas Runolfsdottir V',
+      'username': 'Maxime_Nienow',
+      'email': 'Sherwood@rosamond.me'
+    },
+    {
+      'id': 9,
+      'name': 'Glenna Reichert',
+      'username': 'Delphine',
+      'email': 'Chaim_McDermott@dana.io'
+    },
+    {
+      'id': 10,
+      'name': 'Clementina DuBuque',
+      'username': 'Moriah.Stanton',
+      'email': 'Rey.Padberg@karina.biz'
+    }
   ];
   public actions = [{ column: 'read', title: 'read' }, { column: 'update', title: 'update' },{ column: 'delete', title: 'delete' }]
 }
