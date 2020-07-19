@@ -1,6 +1,6 @@
 {
-  "name": "dynamic-table",
-  "version": "0.0.0",
+  "name": "@juhdobbin/ngx-material-dynamic-table",
+  "version": "1.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,7 @@
     "npm_pack": "cd dist/ngx-dynamic-table && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~9.1.1",
     "@angular/cdk": "^9.2.0",
@@ -54,5 +54,26 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
-  }
+  },
+  "description": "Componente angular dinâmico que ajuda a criar uma tabela utilizando o Angular material, de maneira fácil e rápida.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juhdobbin/dynamic_table.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "datatable",
+    "Angular",
+    "tabela",
+    "dinamica"
+  ],
+  "author": "Juliana Dobbin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juhdobbin/dynamic_table/issues"
+  },
+  "homepage": "https://github.com/juhdobbin/dynamic_table#readme"
 }

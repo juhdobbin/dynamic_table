@@ -13,12 +13,13 @@ Componente angular dinâmico que ajuda a criar uma tabela utilizando o Angular m
 | ------------- |:-------------:|
 | 1.0.0    | 	>= 9.x |
 
+
 ### Install
 ```javascript
 npm install ngx-dynamic-table --save
 ```
 
-###Setup
+### Setup
 
 1. Adicione o css dos icones o material ao seu , e o css de algum tema do material
 
