@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dynamic-table": {
+    "material-dynamic-table": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -124,21 +124,21 @@
         }
       }
     },
-    "ngx-dynamic-table": {
+    "ngx-material-dynamic-table": {
       "projectType": "library",
-      "root": "projects/ngx-dynamic-table",
-      "sourceRoot": "projects/ngx-dynamic-table/src",
+      "root": "projects/ngx-material-dynamic-table",
+      "sourceRoot": "projects/ngx-material-dynamic-table/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-dynamic-table/tsconfig.lib.json",
-            "project": "projects/ngx-dynamic-table/ng-package.json"
+            "tsConfig": "projects/ngx-material-dynamic-table/tsconfig.lib.json",
+            "project": "projects/ngx-material-dynamic-table/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-dynamic-table/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-material-dynamic-table/tsconfig.lib.prod.json"
             }
           }
         },
@@ -154,8 +154,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-dynamic-table/tsconfig.lib.json",
-              "projects/ngx-dynamic-table/tsconfig.spec.json"
+              "projects/ngx-material-dynamic-table/tsconfig.lib.json",
+              "projects/ngx-material-dynamic-table/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -165,7 +165,7 @@
       }
     }
   },
-  "defaultProject": "dynamic-table",
+  "defaultProject": "ngx-material-dynamic-table",
   "cli": {
     "analytics": "4d5c8976-62b5-4e93-8e3b-a8e6581d9d8b"
   }

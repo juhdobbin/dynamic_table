@@ -32,13 +32,13 @@ export const buttonsConfig = {
   },
 };
 @Component({
-  selector: 'lib-ngx-dynamic-table',
-  templateUrl: './ngx-dynamic-table.component.html',
+  selector: 'ngx-material-dynamic-table',
+  templateUrl: './ngx-material-dynamic-table.component.html',
   styleUrls: [
-    './ngx-dynamic-table.component.scss'
+    './ngx-material-dynamic-table.component.scss'
   ],
 })
-export class NgxDynamicTableComponent implements OnChanges {
+export class NgxMaterialDynamicTableComponent implements OnChanges {
   @Input() dataSource;
   @Input() displayedColumns = [];
   @Input() actions;

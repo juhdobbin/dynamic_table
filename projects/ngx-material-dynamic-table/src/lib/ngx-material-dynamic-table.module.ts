@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxDynamicTableComponent } from './ngx-dynamic-table.component';
+import { NgxMaterialDynamicTableComponent } from './ngx-material-dynamic-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,7 +9,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
-  declarations: [NgxDynamicTableComponent],
+  declarations: [NgxMaterialDynamicTableComponent],
   imports: [
     CommonModule,
     MatTableModule,
@@ -20,7 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule,
   ],
   exports: [
-    NgxDynamicTableComponent,
+    NgxMaterialDynamicTableComponent,
     MatTableModule,
     MatTooltipModule,
     MatIconModule,
@@ -29,4 +29,4 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule,
   ],
 })
-export class NgxDynamicTableModule {}
+export class NgxMaterialDynamicTableModule {}

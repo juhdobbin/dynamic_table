@@ -1,6 +1,6 @@
 {
-  "name": "@juhdobbin/ngx-material-dynamic-table",
-  "version": "1.0.4",
+  "name": "ngx-material-dynamic-table",
+  "version": "1.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,9 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build ngx-dynamic-table",
-    "npm_pack": "cd dist/ngx-dynamic-table && npm pack",
-    "package": "npm run build_lib && npm run npm_pack"
+    "build_lib": "ng build ngx-material-dynamic-table --prod",
+    "npm_pack": "cd dist/ngx-material-dynamic-table && npm pack",
+    "package": "npm run build_lib && npm run npm_pack",
+    "publish_npm":"cd dist/ngx-material-dynamic-table && npm publish"
   },
   "private": false,
   "dependencies": {
@@ -27,7 +28,6 @@
     "material-design-icons": "^3.0.1",
     "material-icons": "^0.3.1",
     "ngx-bootstrap": "^5.6.1",
-    "ngx-dynamic-table": "file:dist/ngx-dynamic-table/ngx-dynamic-table-0.0.1.tgz",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -61,9 +61,7 @@
     "type": "git",
     "url": "git+https://github.com/juhdobbin/dynamic_table.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+
   "keywords": [
     "datatable",
     "Angular",
